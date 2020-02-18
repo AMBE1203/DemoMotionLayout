@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motionLayout">
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+
+        <OnSwipe
+            motion:dragDirection="dragDown"
+            motion:touchAnchorId="@+id/container"
+            motion:touchAnchorSide="bottom" />
+
+        <KeyFrameSet>
+
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_bluetooth"
+                motion:percentX="0.9"
+                motion:percentY="0.15" />
+
+            <KeyAttribute
+                android:alpha="0.5"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_rotate"/>
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+
+                motion:motionTarget="@id/rl_type_read_book"/>
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_gps"/>
+
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_save_batery"/>
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_plane"/>
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_host"/>
+
+            <KeyAttribute
+                android:alpha="0.1"
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/rl_cast"/>
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="@color/colorPrimary" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/rl_mobi"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toBottomOf="@id/container"
+            motion:layout_constraintEnd_toStartOf="@id/rl_wifi"
+            motion:layout_constraintStart_toStartOf="@id/container"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+        <Constraint
+            android:id="@+id/rl_wifi"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toBottomOf="@id/container"
+            motion:layout_constraintEnd_toStartOf="@id/rl_flash"
+            motion:layout_constraintStart_toEndOf="@id/rl_mobi"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_flash"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toBottomOf="@id/container"
+            motion:layout_constraintEnd_toStartOf="@id/rl_sound"
+            motion:layout_constraintStart_toEndOf="@id/rl_wifi"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_sound"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toBottomOf="@id/container"
+            motion:layout_constraintEnd_toStartOf="@id/rl_bluetooth"
+            motion:layout_constraintStart_toEndOf="@id/rl_flash"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_bluetooth"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            motion:layout_constraintBottom_toBottomOf="@id/container"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            motion:layout_constraintStart_toEndOf="@id/rl_sound"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_rotate"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_sound"
+            motion:layout_constraintTop_toBottomOf="@id/rl_bluetooth"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            android:alpha="0"/>
+
+
+        <Constraint
+            android:id="@+id/rl_type_read_book"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_rotate"
+            motion:layout_constraintTop_toBottomOf="@id/rl_bluetooth"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            android:alpha="0"/>
+
+
+        <Constraint
+            android:id="@+id/rl_gps"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_type_read_book"
+            motion:layout_constraintTop_toBottomOf="@id/rl_bluetooth"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            android:alpha="0"/>
+        
+        <Constraint
+            android:id="@+id/rl_save_batery"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/rl_plane"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/rl_plane"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/rl_host"
+            motion:layout_constraintStart_toEndOf="@id/rl_save_batery"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/rl_host"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/rl_cast"
+            motion:layout_constraintStart_toEndOf="@id/rl_plane"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:id="@+id/rl_cast"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/rl_host"
+            motion:layout_constraintTop_toTopOf="parent"/>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="@color/colorAccent" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@+id/rl_mobi"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintBottom_toTopOf="@id/rl_bluetooth"
+            motion:layout_constraintEnd_toStartOf="@id/rl_wifi"
+            motion:layout_constraintStart_toStartOf="@id/container"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_wifi"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+
+            motion:layout_constraintEnd_toStartOf="@id/rl_flash"
+            motion:layout_constraintStart_toEndOf="@id/rl_mobi"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_flash"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+
+            motion:layout_constraintEnd_toStartOf="@id/rl_sound"
+            motion:layout_constraintStart_toEndOf="@id/rl_wifi"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+        <Constraint
+            android:id="@+id/rl_sound"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            motion:layout_constraintStart_toEndOf="@id/rl_flash"
+            motion:layout_constraintTop_toTopOf="@id/container"/>
+
+
+
+        <Constraint
+            android:id="@+id/rl_bluetooth"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintEnd_toStartOf="@id/rl_rotate"
+            motion:layout_constraintStart_toStartOf="@id/container"
+            motion:layout_constraintTop_toBottomOf="@id/rl_mobi"/>
+
+
+        <Constraint
+            android:id="@+id/rl_rotate"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_bluetooth"
+            motion:layout_constraintTop_toBottomOf="@id/rl_wifi"
+            motion:layout_constraintEnd_toStartOf="@id/rl_type_read_book"
+            android:alpha="1"/>
+
+
+        <Constraint
+            android:id="@+id/rl_type_read_book"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_rotate"
+            motion:layout_constraintTop_toBottomOf="@id/rl_flash"
+            motion:layout_constraintEnd_toStartOf="@id/rl_gps"
+            android:alpha="1"/>
+
+
+        <Constraint
+            android:id="@+id/rl_gps"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintStart_toEndOf="@id/rl_type_read_book"
+            motion:layout_constraintTop_toBottomOf="@id/rl_sound"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            android:alpha="1"/>
+
+
+        <Constraint
+            android:id="@+id/rl_save_batery"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="1"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintTop_toBottomOf="@id/rl_bluetooth"
+            motion:layout_constraintEnd_toStartOf="@id/rl_plane"
+            motion:layout_constraintStart_toStartOf="@id/container"
+           />
+
+        <Constraint
+            android:id="@+id/rl_plane"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="1"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintTop_toBottomOf="@id/rl_rotate"
+            motion:layout_constraintEnd_toStartOf="@id/rl_host"
+            motion:layout_constraintStart_toEndOf="@id/rl_save_batery" />
+
+        <Constraint
+            android:id="@+id/rl_host"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="1"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintTop_toBottomOf="@id/rl_type_read_book"
+            motion:layout_constraintEnd_toStartOf="@id/rl_cast"
+            motion:layout_constraintStart_toEndOf="@id/rl_plane"/>
+
+        <Constraint
+            android:id="@+id/rl_cast"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:alpha="1"
+            android:layout_marginTop="24dp"
+            motion:layout_constraintEnd_toEndOf="@id/container"
+            motion:layout_constraintStart_toEndOf="@id/rl_host"
+            motion:layout_constraintTop_toBottomOf="@id/rl_gps"/>
+
+
+
+    </ConstraintSet>
+
+</MotionScene>
